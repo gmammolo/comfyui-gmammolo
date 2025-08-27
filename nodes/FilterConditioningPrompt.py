@@ -63,13 +63,3 @@ class FilterConditioningPrompt:
                 filtered_conditioning.append(cond_item)
         
         return (filtered_conditioning,)
-
-
-
-NODE_CLASS_MAPPINGS = {
-    "FilterConditioningPrompt": FilterConditioningPrompt,
-}
-
-NODE_DISPLAY_NAME_MAPPINGS = {
-    "FilterConditioningPrompt": "Filter Conditioning Prompt",
-}
