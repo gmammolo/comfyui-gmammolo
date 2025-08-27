@@ -3,6 +3,7 @@ class FilterConditioningPrompt:
     Custom node for ComfyUI that filters a CONDITIONING prompt by removing content 
     before a specified substring (including the substring itself).
     """
+    DEPRECATED = True
     
     @classmethod
     def INPUT_TYPES(s):
