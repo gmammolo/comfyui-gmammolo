@@ -1,0 +1,15 @@
+[project]
+name = "comfyui-gmammolo"
+description = "Custom ComfyUI Nodes for general porpouse."
+version = "0.0.1"
+license = { file = "LICENSE" }
+dependencies = []
+
+[project.urls]
+Repository = "https://github.com/gmammolo/comfyui-gmammolo"
+#  Used by Comfy Registry https://comfyregistry.org
+
+[tool.comfy]
+PublisherId = "gmammolo"
+DisplayName = "comfyui-gmammolo"
+Icon = ""
