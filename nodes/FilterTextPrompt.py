@@ -34,7 +34,8 @@ class FilterTextPrompt:
         if not substring:
             return normalized
 
-        idx = normalized.find(substring)
+        # Use rfind to get the last occurrence of the substring
+        idx = normalized.rfind(substring)
         if idx != -1:
             return normalized[idx + len(substring):]
         return normalized
