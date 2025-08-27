@@ -1,3 +1,6 @@
+import re
+
+
 class FilterTextPrompt:
     """
     Node that filters a plain STRING by removing everything before (and
@@ -19,14 +22,22 @@ class FilterTextPrompt:
     CATEGORY = "gmammolo/Text"
 
     def _filter_string(self, original_text, substring):
+        # Only operate on strings
         if not isinstance(original_text, str):
             return original_text
+
+        # Normalize: replace line breaks with spaces, collapse multiple whitespace
+        normalized = original_text.replace('\r', ' ').replace('\n', ' ')
+        normalized = re.sub(r"\s+", ' ', normalized).strip()
+
+        # If no substring provided, return the normalized input
         if not substring:
-            return original_text
-        idx = original_text.find(substring)
+            return normalized
+
+        idx = normalized.find(substring)
         if idx != -1:
-            return original_text[idx + len(substring):]
-        return original_text
+            return normalized[idx + len(substring):]
+        return normalized
 
     def filter_prompt(self, text="", substring="PROMPT:"):
         """Return a single STRING which is the text after the substring (if found),
