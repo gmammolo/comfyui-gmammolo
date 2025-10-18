@@ -10,11 +10,16 @@ class CheckImageGen:
         return {
             "required": {
                 "image": ("IMAGE", {"default": None, "tooltip": "Image to check"}),
-                "positive_prompt": ("STRING", {"default": "", "multiline": True, "forceInput": False, "tooltip": "Text to filter"}),
-                "negative_prompt": ("STRING", {"default": "", "tooltip": ""}),
-                "openai_base_url": ("STRING", {"default": "https://api.openai.com", "tooltip": "Base URL for OpenAI-compatible API"}),
-                "model": ("STRING", {"default": "gpt-4o-mini", "tooltip": "Model to use for evaluation"}),
+                "positive_prompt": ("STRING", {"default": "", "multiline": True, "forceInput": False, "tooltip": "Positive prompt to guide generation image"}),
+                "negative_prompt": ("STRING", {"default": "", "multiline": True, "forceInput": False, "tooltip": "Negative prompt to guide generation image"}),
+                "openai_base_url": ("STRING", {"default": "https://utopia.hpc4ai.unito.it/api", "tooltip": "Base URL for OpenAI-compatible API"}),
+                "model": ("STRING", {"default": "gemma3:27b-it-fp16", "tooltip": "Model to use for evaluation"}),
                 "openai_api_key": ("STRING", {"default": "", "tooltip": "API key for the OpenAI-compatible service (optional if set in env)"}),
+            },
+            "hidden": {
+                "unique_id": "UNIQUE_ID",
+                "prompt": "PROMPT", 
+                "extra_pnginfo": "EXTRA_PNGINFO",
             }
         }
 
