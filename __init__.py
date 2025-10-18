@@ -1,4 +1,5 @@
 
+from .nodes.CheckImageGen import CheckImageGen
 from .nodes.SimpleTextbox import SimpleTextbox
 from .nodes.FilterTextPrompt import FilterTextPrompt
 
@@ -8,11 +9,13 @@ from .deprecated_nodes import NODE_CLASS_MAPPINGS as DEPRECATED_NODE_CLASS_MAPPI
 NODE_CLASS_MAPPINGS = {
     "SimpleTextbox": SimpleTextbox,
     "FilterTextPrompt": FilterTextPrompt,
+    "CheckImageGen": CheckImageGen,
     **DEPRECATED_NODE_CLASS_MAPPINGS
 }
 NODE_DISPLAY_NAME_MAPPINGS = {
     "SimpleTextbox": "Simple Textbox",
     "FilterTextPrompt": "Filter Text Prompt",
+    "CheckImageGen": "Check Image Generation",
     **DEPRECATED_NODE_DISPLAY_NAME_MAPPINGS
 }
 
